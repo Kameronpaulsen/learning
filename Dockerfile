@@ -9,8 +9,9 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install
-COPY server.js ./
+RUN npm ci --omit=dev
+COPY server.js app.js db.js ./
+COPY routes ./routes
 EXPOSE 8080
 
 CMD npm start

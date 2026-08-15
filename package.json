@@ -4,10 +4,22 @@
   "private": true,
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cookie-parser": "^1.4.7",
+    "express": "^5.2.1",
     "pg": "^8.23.0",
     "redis": "^6.2.1"
+  },
+  "devDependencies": {
+    "node-pg-migrate": "^9.0.0",
+    "prettier": "^3.9.6",
+    "supertest": "^7.2.2",
+    "vitest": "^4.1.10"
   }
 }
